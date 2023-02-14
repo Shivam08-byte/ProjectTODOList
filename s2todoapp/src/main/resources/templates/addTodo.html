@@ -1,0 +1,34 @@
+<div th:replace ="header :: myheader"></div>
+<div th:replace ="navbar :: myNavbar"></div>
+
+<h1>Welcome <span th:text="${#authentication.name}"></span> </h1>
+<form action="#"
+      th:action="@{/todo/add}" th:object="${todo}" method="post" autocomplete="off">
+      <div class="form-group row">
+          <input type ="hidden" id="id" class="form-control" th:field="*{id}" placeholder="Title">
+          <label for = "title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-18">
+              <input type ="text" id="title" class="form-control" th:field="*{title}" placeholder="Title">
+
+          </div>
+
+      </div>
+     <div class="form-group row">
+         <label for="schedule" class="col-sm-2 col-form-lable">Schedule</label>
+         <div class="col-sm-18">
+             <input type="date" id ="schedule" class="form-control" th:field="*{schedule}">
+         </div>
+
+     </div>
+    <input type ="hidden" th:field ="*{user}">
+
+    <div class="form-group row">
+        <div class="col-sm-18">
+            <button type ="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>
+
+<div th:replace="footer :: myfooter"></div>
+
+

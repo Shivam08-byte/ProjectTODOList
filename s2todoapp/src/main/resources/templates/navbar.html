@@ -1,0 +1,18 @@
+<div th:replace="header :: myheader">
+<div th:fragment="myNavbar">
+
+    <body class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container">
+        <a class="navbar-brand" th:href="@{/welcome}" href="#">To-Do Application</a>
+        <div class="navbar-nav ml-auto" th:if="${#authentication.name != 'anonymousUser'}">
+            <!--            <a href="#" class="nav-item nav-link">Hello <span th:text="${#authentication.}"></span></a>-->
+            <a href="#" th:href="@{/welcome}" class="nav-item nav-link">Home</a>
+
+            <a href="#" th:href="@{/logout}" class="nav-item nav-link">Logout</a>
+
+        </div>
+
+
+    </nav>
+</div>
+</div>
